@@ -7,6 +7,8 @@ Simple UDP server for remote control of Raspberry PiCamera
 - resolution,
 - annotate_text_size,
 - annotate_text,
+- annotate_background,
+- annotate_foreground,
 - brightness,
 - rotation,
 - framerate,
@@ -15,8 +17,6 @@ Simple UDP server for remote control of Raspberry PiCamera
 - capture,
 - start_recording,
 - stop_recording,
-- annotate_background,
-- annotate_foreground,
 - image_effect,
 - exposure_mode,
 - awb_mode.
