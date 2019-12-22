@@ -1,0 +1,15 @@
+[Unit]
+Description=Simple Pi-Cam Server
+After=network.target
+
+[Service]
+ExecStart=/usr/local/pi-cam/pi-cam.py
+TimeoutStopSec=30
+RestartSec=60
+Restart=always
+StandardOutput=null
+StandardError=syslog 
+SyslogIdentifier=pi-cam
+
+[Install]
+WantedBy=multi-user.target 
