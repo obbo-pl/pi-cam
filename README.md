@@ -23,19 +23,23 @@ Simple UDP server for remote control of Raspberry PiCamera
 
 ### Installation:
 
-create directory:
+Create a directory:
 ```
 sudo mkdir /usr/local/pi-cam 
 ```
 put all files in directory
-change execution right to *.py files
 
-go to directory and just run:
+add execute permission to *.py files
+```
+sudo chmod +x *.py
+```
+
+go to the directory and just run:
 ```
 cd /usr/local/pi-cam
-./pi-cam.py
+sudo ./pi-cam.py
 ```
-or install as service:
+or install as a service:
 ```
 cd /etc/systemd/system/ 
 sudo ln -s /usr/local/pi-cam/pi-cam.service pi-cam.service
