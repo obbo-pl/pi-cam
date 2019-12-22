@@ -1,6 +1,9 @@
 # pi-cam
 Simple UDP server for remote control of Raspberry PiCamera
 
+The main goal was to create a simple service to control the Raspberry PiCamera from another service running on the same host.
+After a small change (i.e. local_ip = '0.0.0.0') you can also control PiCamera from a remote host. The pi-cam UDP server is simple and is not secure, so do not expose it to the Internet or other untrusted network!
+
 ##### Supports the basic set of commands:
 - start_preview,
 - stop_preview,
