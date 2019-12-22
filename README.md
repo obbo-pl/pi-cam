@@ -2,7 +2,7 @@
 Simple UDP server for remote control of Raspberry PiCamera
 
 The main goal was to create a simple service to control the Raspberry PiCamera from another service running on the same host.
-After a small change (i.e. local_ip = '0.0.0.0') you can also control PiCamera from a remote host. The Pi-Cam UDP server is simple and is not secure, so do not expose it to the Internet or other untrusted network!
+After a small change (e.g. local_ip = '0.0.0.0') you can also control PiCamera from a remote host. By default, it works on UDP port 1301. The Pi-Cam UDP server is simple and has not been secured, so do not expose it to the Internet or other untrusted network!
 
 ##### Supports the basic set of commands:
 - start_preview,
@@ -25,7 +25,6 @@ After a small change (i.e. local_ip = '0.0.0.0') you can also control PiCamera f
 - awb_mode.
 
 ### Installation:
-
 Create a directory:
 ```
 sudo mkdir /usr/local/pi-cam 
@@ -50,3 +49,9 @@ sudo systemctl daemon-reload
 sudo systemctl enable pi-cam.service
 sudo systemctl start pi-cam.service
 ```
+
+### Client
+pi-cam-set.py is an example of a client working with a Pi-Cam UDP server. To send a command to PiCamera, use:
+./pi-cam-set.py <command>
+
+(e.g. ./pi-cam-set.py 'annotate_text_size = 80')
