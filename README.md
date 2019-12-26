@@ -32,13 +32,13 @@ wget https://github.com/obbo-pl/pi-cam/archive/master.zip
 sudo unzip master.zip
 sudo mv pi-cam-master pi-cam
 ```
-add execute permission to *.py files
-```
-sudo chmod a+x *.py
-```
-go to the directory and just run:
+go to the directory and add execute permission to *.py files
 ```
 cd /usr/local/pi-cam
+sudo chmod a+x *.py
+```
+just run:
+```
 sudo ./pi-cam.py
 ```
 or install as a service:
