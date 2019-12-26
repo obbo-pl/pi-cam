@@ -28,8 +28,9 @@ After a small change (e.g. local_ip = '0.0.0.0') you can also control PiCamera f
 Copy and unzip files:
 ```
 cd /usr/local/
-wget https://github.com/obbo-pl/pi-cam/archive/master.zip
+sudo wget https://github.com/obbo-pl/pi-cam/archive/master.zip
 sudo unzip master.zip
+sudo rm master.zip
 sudo mv pi-cam-master pi-cam
 ```
 go to the directory and add execute permission to *.py files
