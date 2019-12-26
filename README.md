@@ -25,17 +25,17 @@ After a small change (e.g. local_ip = '0.0.0.0') you can also control PiCamera f
 - awb_mode.
 
 ### Installation:
-Create a directory:
+Copy and unzip files:
 ```
-sudo mkdir /usr/local/pi-cam 
+cd /usr/local/
+wget https://github.com/obbo-pl/pi-cam/archive/master.zip
+sudo unzip master.zip
+sudo mv pi-cam-master pi-cam
 ```
-put all files in directory
-
 add execute permission to *.py files
 ```
-sudo chmod +x *.py
+sudo chmod a+x *.py
 ```
-
 go to the directory and just run:
 ```
 cd /usr/local/pi-cam
