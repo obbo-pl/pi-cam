@@ -4,13 +4,13 @@
 #
 # Author: Krzysztof Markiewicz
 # 2019, www.obbo.pl
-# v.0.1 20191214
+# v.0.1 20191226
 #
 # This program is distributed under the terms of the GNU General Public License v3.0
 #
+
 # https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/5
 # https://picamera.readthedocs.io/en/release-1.13/
-
 from picamera import PiCamera, Color
 import logging
 import logging.config
@@ -97,7 +97,6 @@ def main():
     recording = False
 
     with PiCamera() as camera:
-        # default settings
         camera.rotation = 180
         camera.framerate = 20
         camera.resolution = (2592, 1440)
@@ -119,8 +118,8 @@ def main():
                 for expression in supported_commands:               
                     if re.match(expression, message):
                         match = True
-                        if message.startswith('annotate_text'):
-                            message = message[message.index('=') + 1:].strip()
+                        if (message.startswith('annotate_text ')) or (message.startswith('annotate_text=')):
+                            message = message[message.find('=') + 1:].strip()
                             text_to_annotate = message.replace('"', '')
                             break
                         if message.startswith('stop_recording'):
@@ -128,11 +127,11 @@ def main():
                                 server_response = 'There is no recording in progress'
                                 break
                         elif message.startswith('capture'):
-                            message = message[message.index('(') + 1:].strip()
+                            message = message[message.find('(') + 1:].strip()
                             message = message.strip(')').strip()
                             message = ''.join(['capture(datetime.datetime.now().strftime(', message, '))'])
                         elif message.startswith('start_recording'):
-                            message = message[message.index("(") + 1:].strip()
+                            message = message[message.find("(") + 1:].strip()
                             message = message.strip(')').strip()
                             message = message.strip('"').strip()
                             if (message.find('.h264') != (len(message) - 5)) and (message.find('.mjpeg') != (len(message) - 6)):
