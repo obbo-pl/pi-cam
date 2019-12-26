@@ -55,5 +55,8 @@ sudo systemctl start pi-cam.service
 pi-cam-set.py is an example of a client working with a Pi-Cam UDP server. To send a command to PiCamera, use:
 ```
 ./pi-cam-set.py <command>
-(e.g. ./pi-cam-set.py 'annotate_text_size = 80')
+(e.g. 
+./pi-cam-set.py 'annotate_text_size = 80'
+./pi-cam-set.py 'image_effect = "emboss"'
+)
 ```
