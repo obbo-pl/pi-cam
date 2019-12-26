@@ -24,6 +24,10 @@ After a small change (e.g. local_ip = '0.0.0.0') you can also control PiCamera f
 - exposure_mode,
 - awb_mode.
 
+More information on PiCamera commands can be found at:
+- [https://picamera.readthedocs.io](https://picamera.readthedocs.io/en/release-1.13/)
+- [https://projects.raspberrypi.org](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera)
+
 ### Installation:
 Copy and unzip files:
 ```
